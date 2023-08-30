@@ -136,12 +136,13 @@ div#game-messages {
 }
 
 button#reset {
-  font-size: 1rem;
+  font-size: .8rem;
   margin-top: 1.5rem;
   display: flex;
   flex-direction: column;
-  width: 19vw;
-  height: 7vh;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
   align-self: center;
   align-items: center;
   justify-content: center;
@@ -152,7 +153,6 @@ button#reset {
   user-select: none;
   border: none;
   outline: none;
-  border-radius: 0.4rem;
 }
 
 #buttons-group {
@@ -214,6 +214,15 @@ a {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+
+
+
+
+
+
+
+
+
 @media (min-width: 1025px) {
   #button#reset {
     width: 10vw;
@@ -247,13 +256,14 @@ a {
     font-size: 3rem;
   }
 }
+
 @media (min-width:961px)  { 
   button#reset {
     width: 8vw;
 }
  }
 
-@media (min-width: 641px) {
+ @media (min-width: 641px) {
   #message {
     display: flex;
     justify-content: center;
@@ -265,12 +275,13 @@ a {
   
 }
 
-@media (min-width: 481px) {
+@media (min-width: 483px) {
   #message {
     margin: 1rem 2rem;
   }
   button#reset {
-    height: 7vh;
+    width: 70px;
+    height: 70px;
   }
   #buttons-group {
     margin: 7rem;
