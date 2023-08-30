@@ -12,7 +12,7 @@ body {
   overflow: hidden;
   background-color: #0d0c1a;
   color: #ffffff;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 #header {
@@ -140,8 +140,8 @@ button#reset {
   margin-top: 1.5rem;
   display: flex;
   flex-direction: column;
-  width: 40vw;
-  height: 8vh;
+  width: 19vw;
+  height: 7vh;
   align-self: center;
   align-items: center;
   justify-content: center;
@@ -214,25 +214,46 @@ a {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-@media (min-width:481px)  { 
- #message {
-  margin: 1rem 2rem;
- }
- button#reset{
-  width: 12vw;
-  height: 11vh
- }
- #buttons-group {
-  margin: 0;
- }
- .btn {
-  width: 4.5rem;
-  height: 4.5rem;
-  font-size: 2.5rem;
- }
-}
+@media (min-width: 1025px) {
+  #button#reset {
+    width: 10vw;
+  }
+  #game-messages {
+    margin: 0rem 1rem;
+  }
+  #message {
+    font-size: 1.5rem;
+  }
+  button#reset .game-title {
+    font-size: 3rem;
+  }
+  h2.round-title,
+  h2.score-title {
+    font-size: 2.6rem;
+  }
 
-@media (min-width:641px)  { 
+  .player-title,
+  .machine-title {
+    font-size: 1.5rem;
+  }
+
+  .footer-text {
+    font-size: 1.5rem;
+  }
+  .gh-link {
+    font-size: 1.8rem;
+  }
+  .gh-link.logo > * {
+    font-size: 3rem;
+  }
+}
+@media (min-width:961px)  { 
+  button#reset {
+    width: 8vw;
+}
+ }
+
+@media (min-width: 641px) {
   #message {
     display: flex;
     justify-content: center;
@@ -241,41 +262,22 @@ a {
   .game-title {
     font-size: 2.4rem;
   }
-}
-
-@media (min-width:1025px) {
-  #game-messages{
-    margin: 0rem 1rem;
-  }
-  #message {
-    font-size: 1.5rem;
-  }
-  button#reset{
-    width: 15vw;
-    font-size: 1.5rem;
-    margin-top: 0;
-  }
-  .game-title {
-    font-size: 3rem;
-}
-h2.round-title, h2.score-title  {
-  font-size: 2.6rem;
-}
-
-.player-title, .machine-title {
-  font-size: 1.5rem;
-}
-
-.footer-text {
-  font-size: 1.5rem;
-}
-.gh-link {
-  font-size: 1.8rem;
-}
-.gh-link.logo > * {
-  font-size: 3rem;
-}
-}
-@media (min-width:1281px) {
   
+}
+
+@media (min-width: 481px) {
+  #message {
+    margin: 1rem 2rem;
+  }
+  button#reset {
+    height: 7vh;
+  }
+  #buttons-group {
+    margin: 7rem;
+  }
+  .btn {
+    width: 4.5rem;
+    height: 4.5rem;
+    font-size: 2.5rem;
+  }
 }
