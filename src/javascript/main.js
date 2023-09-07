@@ -285,10 +285,10 @@ let removeSelections = () => {
     removeMachineChoice(computerSelection);
     if (roundNumber === 5) {
       if (playerScore === machineScore) {
-        message.textContent = `THE PLAYER AND THE MACHINE TIED!! ${playerScore} - ${machineScore}.`;
+        message.textContent = 'THE PLAYER AND THE MACHINE TIED!!';
         buttons.forEach(button => button.disabled = true);
       } else if (playerScore > machineScore) {
-        message.textContent = `CONGRATULATIONS!! YOU WON!! ${playerScore} - ${machineScore}.`;
+        message.textContent = 'CONGRATULATIONS!! YOU WON!!';
         if (!isMuted) {
           let levelWinAudioPromise = levelWinAudio.play();
           levelWinAudioPromise.then(() => {
@@ -299,7 +299,7 @@ let removeSelections = () => {
         }
         buttons.forEach(button => button.disabled = true);
       } else {
-        message.textContent = `GAME OVER!!, YOU LOSE!! ${playerScore} - ${machineScore}.`;
+        message.textContent = 'GAME OVER!!, YOU LOSE!!';
         if (!isMuted) {
           let gameOverAudioPromise = gameOverAudio.play();
           gameOverAudioPromise.then(() => {
