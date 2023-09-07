@@ -1,7 +1,9 @@
+/* Start mobile first design */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* border: 1px solid orange; */
 }
 
 body {
@@ -16,54 +18,103 @@ body {
 }
 
 #header {
-  height: 18vh;
+  height: 25vh;
+}
+.title-box {
+  height: 20vh;
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
-  text-align: center;
-  font-size: 1rem;
 }
 
 .game-title {
-  font-weight: 800;
+  font-size: 2.5rem;
+  text-align: center;
+}
+.volume-box {
+  height: 5vh;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
 }
 
-#content {
-  display: flex;
-  flex-direction: column;
-  min-height: 79vh;
-}
-#info-box {
-  display: flex;
-  justify-content: space-around;
-  align-items: baseline;
-  margin: 1rem;
+.fa-volume-mute,
+.fa-volume-up {
+  font-size: 2rem;
+  cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-h2.round-title,
-h2.score-title {
+#volume-text {
+  font-size: 1.5rem;
+  font-style: italic;
   font-weight: 500;
 }
-
-h3.player-title {
-  text-align: left;
+#content {
+  height: 70vh;
 }
 
-h2.round-title {
+#rounds-box {
   display: flex;
+  justify-content: space-evenly;
   align-items: center;
-  justify-content: center;
+  height: 10vh;
 }
 
 #circles-container {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+}
+.circle {
+  margin-right: 0.5rem;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+}
+
+.one {
+  height: 12px;
+  width: 12px;
+  background-color: rgba(7, 108, 34, 0.87);
+  visibility: hidden;
+}
+.two {
+  height: 14px;
+  width: 14px;
+  background-color: rgba(12, 255, 8, 0.601);
+  visibility: hidden;
+}
+.three {
+  height: 16px;
+  width: 16px;
+  background-color: rgba(28, 221, 6, 0.864);
+  visibility: hidden;
+}
+.four {
+  height: 18px;
+  width: 18px;
+  background-color: rgba(243, 255, 8, 0.91);
+  visibility: hidden;
+}
+.five {
+  height: 20px;
+  width: 20px;
+  background-color: rgb(255, 8, 8);
+  visibility: hidden;
+}
+
+#score-box {
+  display: flex;
+  height: 10vh;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .player-title,
 .machine-title {
-  font-weight: 300;
+  font-weight: 600;
+  font-size: 1.4rem;
 }
 
 .player-title {
@@ -75,77 +126,41 @@ h2.round-title {
 }
 
 .player-score {
-  color: rgb(255, 204, 0);
+  color: #ffffff;
   font-weight: 800;
-  padding-left: 0.3rem;
+  padding-left: 0.6rem;
 }
 .machine-score {
-  color: #ddff00;
+  color: #ffffff;
   font-weight: 800;
-  padding-left: 0.3rem;
+  padding-left: 0.6rem;
 }
 
-.circle {
+#game-messages {
+  height: 15vh;
   display: flex;
-  margin-right: 0.5rem;
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  display: flex;
-  position: relative;
-  bottom: 0;
-}
-
-.one {
-  height: 10px;
-  width: 10px;
-  background-color: rgba(7, 108, 34, 0.87);
-}
-.two {
-  height: 12px;
-  width: 12px;
-  background-color: rgba(12, 255, 8, 0.601);
-}
-.three {
-  height: 14px;
-  width: 14px;
-  background-color: rgba(28, 221, 6, 0.864);
-}
-.four {
-  height: 16px;
-  width: 16px;
-  background-color: rgba(243, 255, 8, 0.91);
-}
-.five {
-  height: 18px;
-  width: 18px;
-  background-color: rgb(255, 8, 8);
-}
-
-div#game-messages {
-  margin: 1rem;
-  padding: 6px;
-  display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  text-align: center;
 }
 
 #message {
-  font-weight: 300;
+  font-size: 1.5rem;
+  font-weight: 800;
   font-style: italic;
-  text-align: justify;
+}
+#reset-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 17vh;
 }
 
 button#reset {
-  font-size: .8rem;
-  margin-top: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  width: 60px;
-  height: 60px;
+  height: 70px;
+  width: 70px;
   border-radius: 50%;
-  align-self: center;
-  align-items: center;
-  justify-content: center;
   background-color: rgb(2 131 242);
   color: #ffffff;
   font-weight: bold;
@@ -153,142 +168,77 @@ button#reset {
   user-select: none;
   border: none;
   outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.fa-robot {
+  font-size: 1.8rem;
+}
+
+.reset-text {
+  font-size: 1rem;
 }
 
 #buttons-group {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin: 1rem;
+  height: 10vh;
 }
 
 .btn {
-  width: 3rem;
-  height: 3rem;
-  font-size: 2rem;
+  width: 70px;
+  height: 70px;
+  font-size: 2.5rem;
   border-radius: 50%;
   background-color: #ffffff;
   border: none;
   cursor: pointer;
   outline: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .btn > * {
   color: #0d0c1a;
 }
-
-#footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100vw;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  color: #ffffff;
-  padding-bottom: 0.3rem;
+.fa-solid {
+  color: #ebb906;
 }
 
+#footer {
+  width: 100vw;
+  height: 5vh;
+  position: absolute;
+  bottom: 0;
+  font-size: 1rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .footer-text {
   font-weight: 100;
-  font-size: 0.8rem;
+  font-size: 1.3rem;
 }
 
 .gh-link {
   color: #ffffff;
   text-decoration: none;
   font-weight: bold;
-  padding-right: 0.3rem;
+  padding-left: 0.3rem;
   text-decoration: none;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.4  rem;
+  cursor: pointer;
 }
 
 .gh-link.logo > * {
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
-button,
-a {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
+/* End mobile first design */
 
-
-
-
-
-
-
-
-
-
-@media (min-width: 1025px) {
-  #button#reset {
-    width: 10vw;
-  }
-  #game-messages {
-    margin: 0rem 1rem;
-  }
-  #message {
-    font-size: 1.5rem;
-  }
-  button#reset .game-title {
-    font-size: 3rem;
-  }
-  h2.round-title,
-  h2.score-title {
-    font-size: 2.6rem;
-  }
-
-  .player-title,
-  .machine-title {
-    font-size: 1.5rem;
-  }
-
-  .footer-text {
-    font-size: 1.5rem;
-  }
-  .gh-link {
-    font-size: 1.8rem;
-  }
-  .gh-link.logo > * {
-    font-size: 3rem;
-  }
-}
-
-@media (min-width:961px)  { 
-  button#reset {
-    width: 8vw;
-}
- }
-
- @media (min-width: 641px) {
-  #message {
-    display: flex;
-    justify-content: center;
-    text-align: justify;
-  }
-  .game-title {
-    font-size: 2.4rem;
-  }
-  
-}
-
-@media (min-width: 483px) {
-  #message {
-    margin: 1rem 2rem;
-  }
-  button#reset {
-    width: 70px;
-    height: 70px;
-  }
-  #buttons-group {
-    margin: 7rem;
-  }
-  .btn {
-    width: 4.5rem;
-    height: 4.5rem;
-    font-size: 2.5rem;
-  }
-}

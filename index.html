@@ -21,12 +21,17 @@
   </head>
   <body>
     <header id="header">
+     <div class="title-box">
       <h1 class="game-title">Rock Paper Scissors Game</h1>
+     </div>
+   <div class="volume-box">
+    <i id="volume-logo" class="fas fa-volume-mute"></i><span id="volume-text"></span>
+   </div>
     </header>
     <div id="content">
       <div id="info-box">
         <div id="rounds-box">
-          <h2 class="round-title">Round</h2>
+          <h2 class="round-title">Rounds</h2>
           <div id="circles-container">
             <div class="circle one"></div>
             <div class="circle two"></div>
@@ -36,29 +41,29 @@
           </div>
         </div>
         <div id="score-box">
-          <h2 class="score-title">Score</h2>
+          <h2 class="score-title">Scores</h2>
           <div class="players">
-            <h3 class="player-title">Player:<span class="player-score"> 1</span></h3>
-            <h3 class="machine-title">Machine:<span class="machine-score"> 3</span></h3>
+            <h3 class="player-title">Player:<span class="player-score"> 0</span></h3>
+            <h3 class="machine-title">Machine:<span class="machine-score"> 0</span></h3>
           </div>
         </div>
       </div>
       <div id="game-messages">
         <h3 id="message">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae,
-          dignissimos!
         </h3>
-        <button id="reset"><i class="fas fa-robot"></i> Reset</button>
+      </div>
+      <div id="reset-container">
+        <button id="reset"><i class="fas fa-robot"></i> <span class="reset-text">Reset</span></button>
       </div>
       <div id="buttons-group">
-        <button class="btn" id="rock">
-          <i class="far fa-light fa-hand-rock"></i>
+        <button class="btn" id="Rock">
+          <i id="Rock" class="far fa-light fa-hand-rock"></i>
         </button>
-        <button class="btn" id="paper">
-          <i class="far fa-light fa-hand-paper"></i>
+        <button class="btn" id="Paper">
+          <i id="Paper" class="far fa-light fa-hand-paper"></i>
         </button>
-        <button class="btn" id="scissors">
-          <i class="far fa-light fa-hand-scissors"></i>
+        <button class="btn" id="Scissors">
+          <i id="Scissors" class="far fa-light fa-hand-scissors"></i>
         </button>
       </div>
     </div>
@@ -70,7 +75,6 @@
         ></a>
       </p>
     </footer>
-
     <script src="./src/javascript/main.js"></script>
   </body>
 </html>
