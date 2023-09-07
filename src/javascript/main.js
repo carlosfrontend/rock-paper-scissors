@@ -22,23 +22,29 @@ let machineScore = 0;
 volumeText.textContent = 'Game Muted';
 
 volumeLogo.addEventListener('click', () => {
-  backgroundAudio.play();
-  if (isMuted) {
-    volumeLogo.classList.remove('fa-volume-mute');
-    volumeLogo.classList.add('fa-volume-up');
-    volumeText.textContent = 'Playing Sounds';
-    backgroundAudio.muted = false;
-    backgroundAudio.volume = '0.2';
-    backgroundAudio.loop = true;
-    isMuted = false;
-  } else {
-    volumeLogo.classList.remove('fa-volume-up');
-    volumeLogo.classList.add('fa-volume-mute');
-    volumeText.textContent = 'Game Muted';
-    backgroundAudio.muted = true;
-    backgroundAudio.pause
-    backgroundAudio.volume = '0';
-    isMuted = true;
+  let backgroundMusicPromise = backgroundAudio.play();
+  if (backgroundMusicPromise != undefined) {
+    backgroundMusicPromise.then(() => {
+      if (isMuted) {
+        volumeLogo.classList.remove('fa-volume-mute');
+        volumeLogo.classList.add('fa-volume-up');
+        volumeText.textContent = 'Playing Sounds';
+        backgroundAudio.muted = false;
+        backgroundAudio.volume = '0.2';
+        backgroundAudio.loop = true;
+        isMuted = false;
+      } else {
+        volumeLogo.classList.remove('fa-volume-up');
+        volumeLogo.classList.add('fa-volume-mute');
+        volumeText.textContent = 'Game Muted';
+        backgroundAudio.muted = true;
+        backgroundAudio.pause
+        backgroundAudio.volume = '0';
+        isMuted = true;
+      }
+    }).catch(error => {
+      console.log(error);
+    })
   }
 });
 
@@ -57,8 +63,8 @@ let setPlayerChoice = (elem) => {
     if (isMuted) {
       rockAudio.muted;
     } else {
-      rockAudio.volume = '0.5';
-      rockAudio.play();
+        rockAudio.volume = '0.5';
+        rockAudio.play();
     }
     buttons[1].removeEventListener('click', playRound);
     buttons[2].removeEventListener('click', playRound);
