@@ -44,7 +44,7 @@ volumeLogo.addEventListener('click', () => {
       }
     }).catch(error => {
       console.log(error);
-    })
+    });
   }
 });
 
@@ -60,31 +60,38 @@ let getComputerChoice = () => {
 let setPlayerChoice = (elem) => {
   let playerSelection = elem.target.id.toLowerCase();
   if (playerSelection === 'rock') {
-    if (isMuted) {
-      rockAudio.muted;
+    if (!isMuted) {
+      let rockAudioPromise = rockAudio.play();
+      rockAudioPromise.then(() => {
+        rockAudio.volume = '0.5';
+      }).catch((error) => console.log(error));
     } else {
-      rockAudio.volume = '0.5';
-      rockAudio.play();
+      rockAudio.muted;
     }
     buttons[1].removeEventListener('click', playRound);
     buttons[2].removeEventListener('click', playRound);
   }
   if (playerSelection === 'paper') {
-    if (isMuted) {
-      paperAudio.muted;
+    if (!isMuted) {
+      let paperAudioPromise = paperAudio.play();
+      paperAudioPromise.then(() => {
+        paperAudio.volume = '0.5';
+      }).catch(error => console.log(error));
     } else {
-      paperAudio.volume = '0.5';
-      paperAudio.play();
+      paperAudio.muted;
     }
     buttons[0].removeEventListener('click', playRound);
     buttons[2].removeEventListener('click', playRound);
   }
   if (playerSelection === 'scissors') {
-    if (isMuted) {
-      scissorsAudio.muted;
+    if (!isMuted) {
+      let scissorsAudioPromise = scissorsAudio.play();
+      scissorsAudioPromise.then(() => {
+        scissorsAudio.volume = '0.5';
+      }).catch(error => console.log(error));
+
     } else {
-      scissorsAudio.volume = '0.5';
-      scissorsAudio.play();
+      scissorsAudio.muted;
     }
     buttons[0].removeEventListener('click', playRound);
     buttons[1].removeEventListener('click', playRound);
@@ -111,34 +118,40 @@ let setComputerChoice = () => {
   let computerSelection = getComputerChoice().toLowerCase();
   switch (computerSelection) {
     case "rock":
-      if (isMuted) {
-        rockAudio.muted;
+      if (!isMuted) {
+        let rockAudioPromise = rockAudio.play();
+        rockAudioPromise.then(() => {
+          rockAudio.volume = '0.5';
+          rockAudio.currentTime = 0;
+        }).catch(error => console.log(error));
       } else {
-        rockAudio.volume = '0.5';
-        rockAudio.currentTime = 0;
-        rockAudio.play();
+        rockAudio.muted;
       }
       buttons[0].style = 'border: 8px solid rgb(240, 8, 240);';
       buttons[0].children[0].classList.add('fa-solid');
       break;
     case "paper":
-      if (isMuted) {
-        paperAudio.muted;
+      if (!isMuted) {
+        let paperAudioPromise = paperAudio.play();
+        paperAudioPromise.then(() => {
+          paperAudio.volume = '0.5';
+          paperAudio.currentTime = 0;
+        }).catch(error => console.log(error));
       } else {
-        paperAudio.volume = '0.5';
-        paperAudio.currentTime = 0;
-        paperAudio.play();
+        paperAudio.muted;
       }
       buttons[1].style = 'border: 8px solid rgb(240, 8, 240);';
       buttons[1].children[0].classList.add('fa-solid');
       break;
     case "scissors":
-      if (isMuted) {
-        scissorsAudio.muted;
+      if (!isMuted) {
+        let scissorsAudioPromise = scissorsAudio.play();
+        scissorsAudioPromise.then(() => {
+          scissorsAudio.volume = '0.5';
+          scissorsAudio.currentTime = 0;
+        }).catch(error => console.log(error));
       } else {
-        scissorsAudio.volume = '0.5';
-        scissorsAudio.currentTime = 0;
-        scissorsAudio.play();
+        scissorsAudio.muted;
       }
       buttons[2].style = 'border: 8px solid rgb(240, 8, 240);';
       buttons[2].children[0].classList.add('fa-solid');
@@ -229,22 +242,26 @@ let playRound = (elem) => {
       case 'W':
 
         playerScore += 1;
-        if (isMuted) {
-          playerPointAudio.muted;
+        if (!isMuted) {
+          let playerPointAudioPromise = playerPointAudio.play();
+          playerPointAudioPromise.then(() => {
+            playerPointAudio.volume = '0.5'
+          }).catch(error => console.log(error));
         } else {
-          playerPointAudio.volume = '0.5';
-          playerPointAudio.play();
+          playerPointAudio.muted;
         }
         break;
 
       case 'L':
 
         machineScore += 1;
-        if (isMuted) {
-          machinePointAudio.muted;
+        if (!isMuted) {
+          let machinePointAudioPromise = machinePointAudio.play();
+          machinePointAudioPromise.then(() => {
+            machinePointAudio.volume = '0.5';
+          }).catch(error => console.log(error));
         } else {
-          machinePointAudio.volume = '0.5';
-          machinePointAudio.play();
+          machinePointAudio.muted;
         }
         break;
 
@@ -272,20 +289,24 @@ let removeSelections = () => {
         buttons.forEach(button => button.disabled = true);
       } else if (playerScore > machineScore) {
         message.textContent = `CONGRATULATIONS!! YOU WON!! ${playerScore} - ${machineScore}.`;
-        if (isMuted) {
-          levelWinAudio.muted;
+        if (!isMuted) {
+          let levelWinAudioPromise = levelWinAudio.play();
+          levelWinAudioPromise.then(() => {
+            levelWinAudio.volume = '0.5';
+          }).catch(error => console.log(error));
         } else {
-          levelWinAudio.volume = '0.5';
-          levelWinAudio.play();
+          levelWinAudio.muted;
         }
         buttons.forEach(button => button.disabled = true);
       } else {
         message.textContent = `GAME OVER!!, YOU LOSE!! ${playerScore} - ${machineScore}.`;
-        if (isMuted) {
-          gameOverAudio.muted;
+        if (!isMuted) {
+          let gameOverAudioPromise = gameOverAudio.play();
+          gameOverAudioPromise.then(() => {
+            gameOverAudio.volume = '0.5';
+          })
         } else {
-          gameOverAudio.volume = '0.5';
-          gameOverAudio.play();
+          gameOverAudio.muted;
         }
         buttons.forEach(button => button.disabled = true);
       }
