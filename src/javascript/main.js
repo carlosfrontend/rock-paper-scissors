@@ -5,13 +5,13 @@ const reset = document.querySelector('#reset');
 const volumeText = document.getElementById('volume-text');
 const volumeLogo = document.getElementById('volume-logo');
 const backgroundAudio = new Audio('https://github.com/carlosfrontend/rock-paper-scissors/raw/rps-ui/src/sounds/calm-music.mp3');
-const rockAudio = new Audio('../src/sounds/rock.mp3');
-const paperAudio = new Audio('../src/sounds/paper.mp3');
-const scissorsAudio = new Audio('../src/sounds/scissors.mp3');
-const playerPointAudio = new Audio('../src/sounds/player-point.mp3');
-const machinePointAudio = new Audio('../src/sounds/machine-point.mp3');
-const levelWinAudio = new Audio('../src/sounds/level-win.mp3');
-const gameOverAudio = new Audio('../src/sounds/game-over.mp3');
+const rockAudio = new Audio('https://github.com/carlosfrontend/rock-paper-scissors/raw/rps-ui/src/sounds/rock.mp3');
+const paperAudio = new Audio('https://github.com/carlosfrontend/rock-paper-scissors/raw/rps-ui/src/sounds/paper.mp3');
+const scissorsAudio = new Audio('https://github.com/carlosfrontend/rock-paper-scissors/raw/rps-ui/src/sounds/scissors.mp3');
+const playerPointAudio = new Audio('https://github.com/carlosfrontend/rock-paper-scissors/raw/rps-ui/src/sounds/player-point.mp3');
+const machinePointAudio = new Audio('https://github.com/carlosfrontend/rock-paper-scissors/raw/rps-ui/src/sounds/machine-point.mp3');
+const levelWinAudio = new Audio('https://github.com/carlosfrontend/rock-paper-scissors/raw/rps-ui/src/sounds/level-win.mp3');
+const gameOverAudio = new Audio('https://github.com/carlosfrontend/rock-paper-scissors/raw/rps-ui/src/sounds/game-over.mp3');
 let isMuted = true;
 let computerSelection = '';
 let playerSelection = '';
@@ -63,8 +63,8 @@ let setPlayerChoice = (elem) => {
     if (isMuted) {
       rockAudio.muted;
     } else {
-        rockAudio.volume = '0.5';
-        rockAudio.play();
+      rockAudio.volume = '0.5';
+      rockAudio.play();
     }
     buttons[1].removeEventListener('click', playRound);
     buttons[2].removeEventListener('click', playRound);
