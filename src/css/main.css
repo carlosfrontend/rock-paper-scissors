@@ -23,6 +23,8 @@ body {
 .title-box {
   height: 20vh;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
 }
 
@@ -35,6 +37,7 @@ body {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-evenly;
+  align-items: center;
 }
 
 .fa-volume-mute,
@@ -232,7 +235,7 @@ button#reset {
   padding-left: 0.3rem;
   text-decoration: none;
   font-weight: 700;
-  font-size: 1.4  rem;
+  font-size: 1.4 rem;
   cursor: pointer;
 }
 
@@ -242,3 +245,84 @@ button#reset {
 
 /* End mobile first design */
 
+/* Start media queries */
+
+@media (min-width: 481px) {
+  .game-title{
+    font-size: 2.6rem;
+    width: 80vw;
+  }
+  #volume-text{
+    font-size: 2rem;
+  }
+
+  #volume-logo{
+    font-size: 3rem;
+  }
+
+  #info-box{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 3rem auto;
+  }
+
+  #rounds-box, #score-box {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .round-title, .score-title {
+    font-size: 1.8rem;
+  }
+
+  .player-title, .machine-title{
+    font-size: 1.5rem;
+  }
+
+  #message {
+    width: 80vw;
+    font-size: 1.6rem;
+  }
+
+  button#reset{
+    height: 85px;
+    width: 85px;
+  }
+  .fa-robot {
+    font-size: 2rem;
+  }
+  .reset-text {
+    padding-top: 4px;
+    font-size: 1.3rem;
+  }
+
+  .btn {
+    height: 85px;
+    width: 85px;
+    font-size: 3.2rem;
+  }
+
+  .footer-text {
+    font-size: 1.6rem;
+  }
+
+  .gh-link {
+    font-size: 2rem;
+  }
+
+  .fa-github-alt::before{
+    font-size: 2.8rem;
+  }
+
+  #footer {
+    padding-bottom: 1.5rem;
+  }
+}
+
+@media (min-width: 641px) {
+  body {
+    background-color: #372dc097;
+  }
+}
