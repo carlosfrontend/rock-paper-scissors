@@ -3,7 +3,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* border: 1px solid orange; */
 }
 
 body {
@@ -500,3 +499,4 @@ button#reset:hover {
     padding-bottom: 1rem;
   }
  }
+/* End media queries */
