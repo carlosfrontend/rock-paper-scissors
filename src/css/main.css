@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* border:1px solid white; */
 }
 html {
   width: 100%;
@@ -17,10 +18,14 @@ body {
   background-color: #0d0c1a;
   color: #ffffff;
   font-family: 'Open Sans', sans-serif;
+  overflow: hidden;
 }
 
 #header {
-  height: 10em;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 .title-box {
   padding: 1em;
@@ -32,7 +37,7 @@ body {
 }
 
 .game-title {
-  font-size: 2.5rem;
+  font-size: 2rem;
   text-align: center;
 }
 .volume-box {
@@ -40,11 +45,12 @@ body {
   flex-direction: row-reverse;
   justify-content: space-evenly;
   align-items: center;
+  padding: 1em;
 }
 
 .fa-volume-mute,
 .fa-volume-up {
-  font-size: 2rem;
+  font-size: 1.5rem;
   cursor: pointer;
   outline: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -56,8 +62,15 @@ body {
   font-weight: 500;
 }
 #content {
-  position: relative;
-  top: 2em;
+  height: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.player-title,
+.machine-title {
+  text-align: right;
 }
 
 #rounds-box {
@@ -141,31 +154,28 @@ body {
 }
 
 #game-messages {
-  position: relative;
-  top: 2em;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5em 4em;
   text-align: center;
 }
 
 #message {
+  width: 80%;
   font-size: 1.4rem;
   font-weight: 800;
   font-style: italic;
+  min-height: 5.9375rem;
 }
 #reset-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  top: 2.4em;
 }
 
 button#reset {
-  height: 6em;
-  width: 6em;
+  height: 5em;
+  width: 5em;
   border-radius: 50%;
   background-color: rgb(2 131 242);
   color: #ffffff;
@@ -186,7 +196,7 @@ button#reset:hover {
   background-color: rgba(2, 130, 242, 0.564);
 }
 .fa-robot {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
 }
 
 .reset-text {
@@ -197,13 +207,11 @@ button#reset:hover {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  position: relative;
-  top: 4.5em;
 }
 
 .btn {
-  width: 6em;
-  height: 6em;
+  width: 5em;
+  height: 5em;
   border-radius: 50%;
   background-color: #ffffff;
   border: none;
@@ -213,7 +221,7 @@ button#reset:hover {
 }
 
 .btn > * {
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: #0d0c1a;
 }
 .fa-solid {
@@ -221,14 +229,15 @@ button#reset:hover {
 }
 
 #footer {
-  width: 100vw;
-  position: relative;
-  top: 8em;
+  width: 100%;
+  position: absolute;
+  bottom: 0.5em;
   font-size: 1rem;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 5%;
 }
 .footer-text {
   font-weight: 100;
@@ -252,26 +261,163 @@ button#reset:hover {
 
 /* End mobile first design */
 
+@media only screen and (min-width: 768px) {
 
-@media (min-width:1024px) { 
-  #game-messages {
-    position: relative;
-    top: 2em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1.2em 4em;
-    text-align: center;
-  }
- }
-
- @media (min-width:1440px) { 
-  html, body {
-    overflow: hidden;
+  .game-title {
+    font-size: 2.5rem;
   }
 
-  #footer{
-    position: relative;
-    bottom: 0;
+  #volume-text, .fa-volume-mute, .fa-volume-up {
+    font-size: 1.8rem;
   }
- }
+
+  .round-title, .score-title {
+    font-size: 2rem;
+  }
+
+  .player-title, .machine-title {
+    font-size: 1.8rem;
+  }
+
+  .one {
+    height:18px;
+    width:18px ;
+  }
+
+  .two {
+    height:20px;
+    width:20px ;
+  }
+
+  .three {
+    height:22px;
+    width:22px ;
+  }
+
+  .four {
+    height:24px;
+    width:24px ;
+  }
+
+  .five {
+    height:26px;
+    width:26px ;
+  }
+
+  #message {
+    font-size: 1.8rem;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  
+  .game-title {
+    font-size: 3rem;
+  }
+
+  #volume-text, .fa-volume-mute, .fa-volume-up {
+    font-size: 2rem;
+  }
+
+  .round-title, .score-title {
+    font-size: 2.5rem;
+  }
+
+  .player-title, .machine-title {
+    font-size: 2rem;
+  }
+
+  .one {
+    height:22px;
+    width:22px ;
+  }
+
+  .two {
+    height:24px;
+    width:24px ;
+  }
+
+  .three {
+    height:28px;
+    width:28px ;
+  }
+
+  .four {
+    height:30px;
+    width:30px ;
+  }
+
+  .five {
+    height:32px;
+    width:32px ;
+  }
+
+  #message {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  
+  .game-title {
+    font-size: 4rem;
+  }
+
+  #volume-text, .fa-volume-mute, .fa-volume-up {
+    font-size: 2.5rem;
+  }
+
+  .round-title, .score-title {
+    font-size: 2.8rem;
+  }
+
+  .player-title, .machine-title {
+    font-size: 2.5rem;
+  }
+
+  .one {
+    height:26px;
+    width:26px ;
+  }
+
+  .two {
+    height:28px;
+    width:28px ;
+  }
+
+  .three {
+    height:30px;
+    width:30px;
+  }
+
+  .four {
+    height:32px;
+    width:32px;
+  }
+
+  .five {
+    height:34px;
+    width:34px;
+  }
+
+  #message {
+    font-size: 2rem;
+  }
+
+  button#reset, .btn {
+    height: 6em;
+    width: 6em;
+  }
+
+  .btn > * {
+    font-size: 3.4rem;
+  }
+
+  .fa-robot {
+    font-size: 2rem;
+  }
+
+  .reset-text {
+    font-size: 1.26rem;
+  }
+}
