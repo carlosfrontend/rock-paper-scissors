@@ -268,7 +268,6 @@ button#reset:hover {
  @media (min-width:1440px) { 
   #game-messages {
     height: 15em;
-    color: red;
   }
 
   #footer{
